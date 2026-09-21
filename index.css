@@ -58,14 +58,18 @@ header{
         position: fixed;
         top:0;
         left:0;
+        visibility: hidden;
+        opacity: 0;
+        transition-duration: 200ms;
+        &.active{
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 
 @media screen and (width <= 1024px ){
-    .container{
-        background-color: blue;
-    }
-
+    header{ background-color: blue; }
 }
 
 @media screen and (width <= 768px){
@@ -97,14 +101,14 @@ header{
             left: -90%;
             transition-duration: 200ms;
             flex-direction: column;
+            &.active{
+                left: 0;
+            }
+    
+            & a{
+                color:#777777;
+            }
         }
 
-        & .active{
-            left: 0;
-        }
-
-        & a{
-            color:#777777;
-        }
     }
 }
